@@ -8,7 +8,9 @@ var translate = function(userString){
   } else if (userString.slice(0,1) === 'a' || userString.slice(0,1) === 'e' || userString.slice(0,1) === 'i' || userString.slice(0,1) === 'o' || userString.slice(0,1) === 'u') {
       return userString + 'way';
   } else {
-      return 'consonant conditional working'
+      //return 'consonant conditional working' 
+      return userString.slice(1)+userString.slice(0,1)+'ay'; 
+      // userString -first consonant+(first consonant + 'ay')
  } 
 };
 
