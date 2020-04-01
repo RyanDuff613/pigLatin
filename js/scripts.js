@@ -3,9 +3,9 @@ var vowels = ['a','e','i','o','u'];
 var translate = function(userString){
   if (userString.slice(0,1)=== 'y') {
       return userString.slice(1)+userString.slice(0,1)+'ay'; 
-      // userString-y+ ("y"+'ay')
   } else if (userString.slice(0,2) === 'qu') {
-      return 'qu conditional working' // userString -first letter+(first letter + 'ay')
+      return userString.slice(2)+userString.slice(0,2)+'ay';
+      // userString -first letter+(first letter + 'ay')
   } else if (userString.slice(0,1) === 'a' || userString.slice(0,1) === 'e' || userString.slice(0,1) === 'i' || userString.slice(0,1) === 'o' || userString.slice(0,1) === 'u') {
       return userString + 'way';
   } else {
