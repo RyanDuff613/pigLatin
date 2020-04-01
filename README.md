@@ -1,17 +1,20 @@
-# Leap Year Detector
+# Pig Latin Translator
 
-###### "created" by **Ryan Duff** with the help of Epicodus and learnhowtoprogram.com
+###### created by **Ryan Duff** with the help of Epicodus and learnhowtoprogram.com
 ---
-## Purpose
-###### This is a simple webpage that allows a user to determine whether or not any given year is a leap-year.
+### Purpose
+###### This is a simple webpage that allows a user to enter a word, phrase or sentence and have their input returned to them in PigLatin.
 ---
 ### Specs
-| Spec | Input | Output |
+| Spec: Page should: | Input | Output |
 |:-|:-|:-|
-| Page should return 'false' when user provided year is not a leap year | 1993|false|
-| Page should return 'true' when user provided year is divisible by 4| 2004|true|
-|Page should return 'false' when user provided year is divisible by 100|1900|false|
-|Page should return 'true' when user provided year is divisible by 400'|2000|true|
+| Do nothing to non-alphabet characters | 5|5|
+| Add 'ay' to single letter words that start with a vowel|I|Iay|
+|Add "way" to multiple letter words that start with a vowel|apart|apartway|
+|Move first consonant to end of word and add "ay" for words starting with a single consonant|pig|igpay|
+|Move all consonants appearing before the first vowel to the back of the word and ad 'ay' for words starting with multiple consonants|practice|acticePray|
+|Move 'qu' to end of word and add 'ay' for words starting with 'qu'|quiet|ietquay|
+|Move 'y' to end of word and add 'ay' for words beginning with 'y'|yummy|ummyYay|
 ---
 ## Setup Requirements
  * Any web browser will be able to display contents of this program. 
