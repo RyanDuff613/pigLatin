@@ -7,7 +7,9 @@ var translate = function(userString){
   } else if (userString.slice(0,1) === 'a' || userString.slice(0,1) === 'e' || userString.slice(0,1) === 'i' || userString.slice(0,1) === 'o' || userString.slice(0,1) === 'u') {
       return userString + 'way';
   } else {
-      return userString.slice(/*ndex of first vowell*/, /* indexof lastletter*/) + userString.slice(0, /*indexof firstvowel-1 */ +'ay'; 
+      return userString.slice(userString.indexOf('a')) + userString.slice(0, userString.indexOf('a')) +'ay';
+      console.log(userString.slice(0,userString.indexOf('a')));
+      // return userString.slice(index of first vowell, indexoflastletter) + userString.slice(0, /*indexof firstvowel-1 */ +'ay'; 
 
       // userstring.slice(indexOf(first vowel), indexof lastletter) + userstring.slice(0, -indexOf(first vowel-1- ) +'ay'
  } 
@@ -18,8 +20,8 @@ $(document).ready(function() {
     event.preventDefault();
     var userString = $('#userInput').val();
     var outputString = translate(userString);
-    console.log(userString);
-    console.log(outputString);
+    //console.log(userString);
+    //console.log(outputString);
 
   $('#result').text(outputString).show();
   });
