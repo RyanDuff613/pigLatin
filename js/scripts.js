@@ -2,6 +2,25 @@
 var vowels = ['a','e','i','o','u'];
 var firstVowelIndex;
 
+//determine if input is one word or multiple
+var singleOrMulti = function(userInput){
+  if(userInput.includes(' ') === true){
+    split();
+    //translate each element of array
+    // join array and output result to user
+  } else {
+    translate();
+  }
+};
+
+//split multi-word user input into separate words
+var split = function(multiWordString){
+  var words = multiWordString.split(' ');
+  console.log(words);
+};
+
+//split('this is my sentence');
+
 //translate user input to pig latin
 var translate = function(userString){
   if (userString.slice(0,1)=== 'y') {
@@ -11,6 +30,7 @@ var translate = function(userString){
   } else if (userString.slice(0,1) === 'a' || userString.slice(0,1) === 'e' || userString.slice(0,1) === 'i' || userString.slice(0,1) === 'o' || userString.slice(0,1) === 'u') {
       return userString + 'way';
   } else {
+      firstVowel(userString);
       return userString.slice(firstVowelIndex) + userString.slice(0,firstVowelIndex) +'ay';  
   } 
 };
@@ -33,9 +53,6 @@ var firstVowel = function(word){
   console.log(index); 
   firstVowelIndex = index;
 };
-
-firstVowel('prize');
-
 
 $(document).ready(function() {
   $('#theForm').submit(function(event){
