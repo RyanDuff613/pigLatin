@@ -1,6 +1,7 @@
 // business logic
 var vowels = ['a','e','i','o','u'];
 var firstVowelIndex;
+
 //translate user input to pig latin
 var translate = function(userString){
   if (userString.slice(0,1)=== 'y') {
@@ -10,17 +11,17 @@ var translate = function(userString){
   } else if (userString.slice(0,1) === 'a' || userString.slice(0,1) === 'e' || userString.slice(0,1) === 'i' || userString.slice(0,1) === 'o' || userString.slice(0,1) === 'u') {
       return userString + 'way';
   } else {
-      return userString.slice(userString.indexOf('a')) + userString.slice(0, userString.indexOf('a')) +'ay';  
+      return userString.slice(firstVowelIndex) + userString.slice(0,firstVowelIndex) +'ay';  
   } 
 };
 
 //return index of first vowel of any word
-var test = function(userString){
+var firstVowel = function(word){
   //create array to hold index values of the first instance of each vowel in inputted word
   var indexValues = [];
   // push index values of first instance of each vowel into indexValues array
   vowels.forEach(function(vowel){
-    indexValues.push((userString.indexOf(vowel)));
+    indexValues.push((word.indexOf(vowel)));
   });
   console.log(indexValues);
   //filter out all -1 indexValues, create new array to hold remaining values
@@ -32,8 +33,9 @@ var test = function(userString){
   console.log(index); 
   firstVowelIndex = index;
 };
-test('yaeiouaeiou');
-console.log(firstVowelIndex);
+
+firstVowel('prize');
+
 
 $(document).ready(function() {
   $('#theForm').submit(function(event){
