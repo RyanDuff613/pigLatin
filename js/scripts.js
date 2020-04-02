@@ -2,20 +2,19 @@
 var vowels = ['a','e','i','o','u'];
 var firstVowelIndex;
 
-//determine if input is one word or multiple
-var singleOrMulti = function(userInput){
-  if(userInput.includes(' ') === true){
-    split();
-    //translate each element of array
-    // join array and output result to user
+//determine if input is one word or multiple, translate if single
+var multiWord = function(userString){
+  if (userString.includes(' ') === true){
+    console.log('string contains spaces');
   } else {
-    translate();
+    console.log('string is a single word');
+    return translate(userString);
   }
 };
 
 //split multi-word user input into separate words
-var split = function(multiWordString){
-  var words = multiWordString.split(' ');
+var splitPhrase = function(multiWordString){
+  var words = multiWordString.splitPhrase(' ');
   console.log(words);
 };
 
@@ -58,10 +57,9 @@ $(document).ready(function() {
   $('#theForm').submit(function(event){
     event.preventDefault();
     var userInput = $('#userInput').val();
-    var output = translate(userInput);
+    var output = multiWord(userInput);
     //console.log(userString);
     //console.log(outputString);
-
   $('#result').text(output).show();
   });
 });
