@@ -3,22 +3,26 @@ var vowels = ['a','e','i','o','u'];
 var firstVowelIndex;
 
 //determine if input is one word or multiple, translate if single
-var multiWord = function(userString){
-  if (userString.includes(' ') === true){
+var multiWord = function(x){
+  if (x.includes(' ') === true){
     console.log('string contains spaces');
-  } else {
+    return splitPhrase(x);
+  }else {
     console.log('string is a single word');
-    return translate(userString);
+    return translate(x);
   }
 };
 
 //split multi-word user input into separate words
 var splitPhrase = function(multiWordString){
-  var words = multiWordString.splitPhrase(' ');
-  console.log(words);
+  var words = multiWordString.split(' ');
+    console.log(words);
+    var translatedArray = words.map(function(word){
+      return translate(word);
+    });
+    console.log(translatedArray);
 };
 
-//split('this is my sentence');
 
 //translate user input to pig latin
 var translate = function(userString){
