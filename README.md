@@ -31,7 +31,7 @@
 * *JavaScript*
 ---
 ### Known Bugs
- * site does not filter user input. input will only work is user correctly inputs data.
+ * ....uhhh...where,exactly...would you like to start?
 ---
 ### Licensing
 ###### MIT License, copyright Ryan Duff (c) 2020
