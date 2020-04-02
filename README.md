@@ -31,7 +31,7 @@
 * *JavaScript*
 ---
 ### Known Bugs
- * ....uhhh...where,exactly...would you like to start?
+ * code does not account for punctation, quote marks and other symbols
 ---
 ### Licensing
 ###### MIT License, copyright Ryan Duff (c) 2020
