@@ -1,5 +1,6 @@
 // business logic
 var vowels = ['a','e','i','o','u'];
+var firstVowelIndex;
 //translate user input to pig latin
 var translate = function(userString){
   if (userString.slice(0,1)=== 'y') {
@@ -27,12 +28,12 @@ var test = function(userString){
     return indexValue !== -1;
   });
   //return lowest value remaining in filtered values
-  var firstVowelIndex = Math.min.apply(Math, filteredValues); 
-  console.log(firstVowelIndex);
-  
+  var index = Math.min.apply(Math, filteredValues); 
+  console.log(index); 
+  firstVowelIndex = index;
 };
 test('yaeiouaeiou');
-
+console.log(firstVowelIndex);
 
 $(document).ready(function() {
   $('#theForm').submit(function(event){
