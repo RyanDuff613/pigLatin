@@ -13,23 +13,25 @@ var translate = function(userString){
   } 
 };
 
-//return index of first vowel
+//return index of first vowel of any word
 var test = function(userString){
+  //create array to hold index values of the first instance of each vowel in inputted word
   var indexValues = [];
+  // push index values of first instance of each vowel into indexValues array
   vowels.forEach(function(vowel){
     indexValues.push((userString.indexOf(vowel)));
   });
   console.log(indexValues);
-
+  //filter out all -1 indexValues, create new array to hold remaining values
   var filteredValues = indexValues.filter(function(indexValue){
     return indexValue !== -1;
   });
-
-  //return Math.min.apply(Math, filteredValues);
-
-  console.log(Math.min.apply(Math, filteredValues)); 
+  //return lowest value remaining in filtered values
+  var firstVowelIndex = Math.min.apply(Math, filteredValues); 
+  console.log(firstVowelIndex);
+  
 };
-test('prize');
+test('yaeiouaeiou');
 
 
 $(document).ready(function() {
